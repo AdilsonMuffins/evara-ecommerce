@@ -6,15 +6,15 @@
   --header-height: 4rem;
 
   /*========== Colors ==========*/
-  --first-color: hsl(176, 88%, 27%);
-  --first-color-alt: hsl(129, 44%, 94%);
+  --first-color: #ff9800;
+  --first-color-alt: #FFF1DC;
   --second-color: hsl(34, 94%, 87%);
   --title-color: hsl(0, 0%, 13%);
   --text-color: hsl(154, 13%, 32%);
   --text-color-light: hsl(60, 1%, 56%);
   --body-color: hsl(0, 0%, 100%);
   --container-color: hsl(0, 0%, 93%);
-  --border-color: hsl(129, 36%, 85%);
+  --border-color: #ff9800;
   --border-color-alt: hsl(113, 15%, 90%);
 
   /*========== Font and typography ==========*/
@@ -639,7 +639,7 @@ table {
 }
 
 .product__badge.light-green {
-  background-color: hsl(155, 20%, 67%);
+  background-color: #ff9800;
 }
 
 .product__badge.light-orange {
@@ -647,7 +647,7 @@ table {
 }
 
 .product__badge.light-blue {
-  background-color: hsl(202, 53%, 76%);
+  background-color: #ff9800;
 }
 
 .product__content {
@@ -848,14 +848,17 @@ table {
 /*=============== SHOWCASE ===============*/
 .showcase__container {
   grid-template-columns: repeat(4, 1fr);
+  
 }
 
 .showcase__wrapper .section__title {
   font-size: var(--normal-font-size);
   border-bottom: 1px solid var(--border-color-alt);
-  padding-bottom: 0.75rem;
+  padding-bottom: .75rem;
   margin-bottom: 2rem;
   position: relative;
+
+
 }
 
 .showcase__wrapper .section__title::before {
@@ -866,6 +869,8 @@ table {
   left: 0;
   bottom: -1.5px;
   background-color: var(--first-color);
+
+
 }
 
 .showcase__item {
@@ -876,14 +881,20 @@ table {
 
 .showcase__item:not(:last-child) {
   margin-bottom: 1.5rem;
+
+ 
 }
 
 .showcase__img {
-  width: 86px;
+  width: 60px;
+
+
 }
 
 .showcase__content {
   width: calc(100% - 110px);
+
+ 
 }
 
 .showcase__title {
@@ -897,7 +908,7 @@ table {
 
 /*=============== NEWSLETTER ===============*/
 .newsletter {
-  background-color: hsl(166, 23%, 74%);
+  background-color: #ff9800;
 }
 
 .home__newsletter {

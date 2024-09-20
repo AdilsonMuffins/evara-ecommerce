@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,9 +17,11 @@
     />
 
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
 
-    <title>Ecommerce Website</title>
+    <link rel="icon" href="/assets/img/favicon.png" type="image/png">
+
+    <title>Muffins Store</title>
   </head>
   <body>
     <!--=============== HEADER ===============-->
@@ -27,14 +29,13 @@
       <div class="header__top">
         <div class="header__container container">
           <div class="header__contact">
-            <span>(+01) - 2345 - 6789</span>
-            <span>Our location</span>
+            <span>(+258) 86 948 5296</span>
           </div>
           <p class="header__alert-news">
-            Super Values Deals - Save more coupons
+            FRETE GRATUITO PARA TODOS OS PRODUTOS!
           </p>
           <a href="login-register.html" class="header__top-action">
-            Log In / Sign Up
+            Entrar / Cadastrar
           </a>
         </div>
       </div>
@@ -43,28 +44,34 @@
         <a href="index.html" class="nav__logo">
           <img
             class="nav__logo-img"
-            src="assets/img/logo.svg"
+            src="assets/img/logo.png"
             alt="website logo"
           />
         </a>
         <div class="nav__menu" id="nav-menu">
+          <div class="nav__menu-top">
+            <a href="index.html" class="nav__menu-logo">
+              <img src="./assets/img/logo.png" alt="">
+            </a>
+            <div class="nav__close" id="nav-close">
+              <i class="fi fi-rs-cross-small"></i>
+            </div>
+          </div>
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="index.html" class="nav__link">Home</a>
+              <a href="index.html" class="nav__link ">Inicio</a>
             </li>
             <li class="nav__item">
-              <a href="shop.html" class="nav__link">Shop</a>
+              <a href="shop.html" class="nav__link">Loja</a>
             </li>
             <li class="nav__item">
-              <a href="accounts.html" class="nav__link">My Account</a>
+              <a href="accounts.html" class="nav__link">Minha conta</a>
             </li>
             <li class="nav__item">
-              <a href="compare.html" class="nav__link">Compare</a>
+              <a href="compare.html" class="nav__link">Comparar</a>
             </li>
             <li class="nav__item">
-              <a href="login-register.html" class="nav__link active-link"
-                >Login</a
-              >
+              <a href="login-register.html" class="nav__link active-link">Login</a>
             </li>
           </ul>
           <div class="header__search">
@@ -87,6 +94,9 @@
             <img src="assets/img/icon-cart.svg" alt="" />
             <span class="count">3</span>
           </a>
+          <div class="header__action-btn nav__toggle" id="nav-toggle">
+            <img src="./assets//img/menu-burger.svg" alt="">
+          </div>
         </div>
       </nav>
     </header>
@@ -155,7 +165,7 @@
       </section>
 
       <!--=============== NEWSLETTER ===============-->
-      <section class="newsletter section">
+      <section class="newsletter section home__newsletter">
         <div class="newsletter__container container grid">
           <h3 class="newsletter__title flex">
             <img
@@ -163,22 +173,23 @@
               alt=""
               class="newsletter__icon"
             />
-            Sign in to Newsletter
+            Inscreva-se na Newsletter
           </h3>
           <p class="newsletter__description">
-            ...and receive $25 coupon for first shopping.
+            ...e receba um cupom de 100MZN para a primeira compra.
           </p>
           <form action="" class="newsletter__form">
             <input
               type="text"
-              placeholder="Enter Your Email"
+              placeholder="Digite Seu Email"
               class="newsletter__input"
             />
-            <button type="submit" class="newsletter__btn">Subscribe</button>
+            <button type="submit" class="newsletter__btn">Inscrever-se</button>
           </form>
         </div>
       </section>
-    </main>
+      </main>
+      
 
     <!--=============== FOOTER ===============-->
     <footer class="footer container">
@@ -187,18 +198,19 @@
           <a href="index.html" class="footer__logo">
             <img src="./assets/img/logo.svg" alt="" class="footer__logo-img" />
           </a>
-          <h4 class="footer__subtitle">Contact</h4>
+          <h4 class="footer__subtitle">Contato</h4>
           <p class="footer__description">
-            <span>Address:</span> 13 Tlemcen Road, Street 32, Beb-Wahren
+            <span>Endereço:</span> 3H2J+FQX, Avenida Joaquim Chissano
+            Maputo Cidade
           </p>
           <p class="footer__description">
-            <span>Phone:</span> +01 2222 365 /(+91) 01 2345 6789
+            <span>Telefone:</span> +258 86 948 5296
           </p>
           <p class="footer__description">
-            <span>Hours:</span> 10:00 - 18:00, Mon - Sat
+            <span>Horário:</span> 80:00 - 16:30, Seg - Sáb
           </p>
           <div class="footer__social">
-            <h4 class="footer__subtitle">Follow Me</h4>
+            <h4 class="footer__subtitle">Siga-me</h4>
             <div class="footer__links flex">
               <a href="#">
                 <img
@@ -239,29 +251,29 @@
           </div>
         </div>
         <div class="footer__content">
-          <h3 class="footer__title">Address</h3>
+          <h3 class="footer__title">Endereço</h3>
           <ul class="footer__links">
-            <li><a href="#" class="footer__link">About Us</a></li>
-            <li><a href="#" class="footer__link">Delivery Information</a></li>
-            <li><a href="#" class="footer__link">Privacy Policy</a></li>
-            <li><a href="#" class="footer__link">Terms & Conditions</a></li>
-            <li><a href="#" class="footer__link">Contact Us</a></li>
-            <li><a href="#" class="footer__link">Support Center</a></li>
+            <li><a href="#" class="footer__link">Sobre Nós</a></li>
+            <li><a href="#" class="footer__link">Informações de Entrega</a></li>
+            <li><a href="#" class="footer__link">Política de Privacidade</a></li>
+            <li><a href="#" class="footer__link">Termos & Condições</a></li>
+            <li><a href="#" class="footer__link">Fale Conosco</a></li>
+            <li><a href="#" class="footer__link">Centro de Suporte</a></li>
           </ul>
         </div>
         <div class="footer__content">
-          <h3 class="footer__title">My Account</h3>
+          <h3 class="footer__title">Minha Conta</h3>
           <ul class="footer__links">
-            <li><a href="#" class="footer__link">Sign In</a></li>
-            <li><a href="#" class="footer__link">View Cart</a></li>
-            <li><a href="#" class="footer__link">My Wishlist</a></li>
-            <li><a href="#" class="footer__link">Track My Order</a></li>
-            <li><a href="#" class="footer__link">Help</a></li>
-            <li><a href="#" class="footer__link">Order</a></li>
+            <li><a href="#" class="footer__link">Entrar</a></li>
+            <li><a href="#" class="footer__link">Ver Carrinho</a></li>
+            <li><a href="#" class="footer__link">Minha Lista de Desejos</a></li>
+            <li><a href="#" class="footer__link">Rastrear Meu Pedido</a></li>
+            <li><a href="#" class="footer__link">Ajuda</a></li>
+            <li><a href="#" class="footer__link">Pedidos</a></li>
           </ul>
         </div>
         <div class="footer__content">
-          <h3 class="footer__title">Secured Payed Gateways</h3>
+          <h3 class="footer__title">Portais de Pagamento Seguros</h3>
           <img
             src="./assets/img/payment-method.png"
             alt=""
@@ -270,8 +282,8 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p class="copyright">&copy; 2024 Evara. All right reserved</p>
-        <span class="designer">Designer by Crypticalcoder</span>
+        <p class="copyright">&copy; 2024 Muffins Store. Todos os direitos reservados</p>
+        <span class="designer">Design by Adilson Muffins</span>
       </div>
     </footer>
 

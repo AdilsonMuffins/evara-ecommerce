@@ -66,6 +66,8 @@ let swiperCategories = new Swiper(".categories__container", {
   },
 });
 
+//<script src="assets/js/mini.js"></script>
+
 /*=============== SWIPER PRODUCTS ===============*/
 let swiperProducts = new Swiper(".new__container", {
   spaceBetween: 24,
@@ -74,7 +76,6 @@ let swiperProducts = new Swiper(".new__container", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-
   breakpoints: {
     768: {
       slidesPerView: 2,
@@ -90,7 +91,6 @@ let swiperProducts = new Swiper(".new__container", {
     },
   },
 });
-
 /*=============== PRODUCTS TABS ===============*/
 const tabs = document.querySelectorAll("[data-target]"),
   tabsContents = document.querySelectorAll("[content]");
@@ -112,3 +112,5 @@ tabs.forEach((tab) => {
     tab.classList.add("active-tab");
   });
 });
+
+
