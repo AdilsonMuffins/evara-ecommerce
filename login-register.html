@@ -70,9 +70,7 @@
             <li class="nav__item">
               <a href="compare.html" class="nav__link">Comparar</a>
             </li>
-            <li class="nav__item">
-              <a href="login-register.html" class="nav__link active-link">Login</a>
-            </li>
+           
           </ul>
           <div class="header__search">
             <input
@@ -106,63 +104,78 @@
       <!--=============== BREADCRUMB ===============-->
       <section class="breadcrumb">
         <ul class="breadcrumb__list flex container">
-          <li><a href="index.html" class="breadcrumb__link">Home</a></li>
+          <li><a href="index.html" class="breadcrumb__link">Inicio</a></li>
           <li><span class="breadcrumb__link">></span></li>
-          <li><span class="breadcrumb__link">Login / Register</span></li>
+          <li><span class="breadcrumb__link">Entrar / Registrar</span></li>
         </ul>
       </section>
 
       <!--=============== LOGIN-REGISTER ===============-->
       <section class="login-register section--lg">
         <div class="login-register__container container grid">
-          <div class="login">
-            <h3 class="section__title">Login</h3>
-            <form class="form grid">
-              <input
-                type="email"
-                placeholder="Your Email"
-                class="form__input"
-              />
-              <input
-                type="password"
-                placeholder="Your Password"
-                class="form__input"
-              />
-              <div class="form__btn">
-                <button class="btn">Login</button>
-              </div>
-            </form>
-          </div>
-          <div class="register">
-            <h3 class="section__title">Create an Account</h3>
-            <form class="form grid">
-              <input
-                type="text"
-                placeholder="Username"
-                class="form__input"
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                class="form__input"
-              />
-              <input
-                type="password"
-                placeholder="Your Password"
-                class="form__input"
-              />
-              <input
-                type="password"
-                placeholder="Confirm Password"
-                class="form__input"
-              />
-              <div class="form__btn">
-                <button class="btn">Submit & Register</button>
-              </div>
-            </form>
-          </div>
+            <div class="login">
+                <h3 class="section__title">Entrar</h3>
+                <form class="form grid" id="loginForm">
+                    <input
+                        type="email"
+                        placeholder="Seu Email"
+                        class="form__input"
+                        id="loginEmail"
+                        required
+                    />
+                    <input
+                        type="password"
+                        placeholder="Sua Senha"
+                        class="form__input"
+                        id="loginPassword"
+                        required
+                    />
+                    <div class="form__btn">
+                        <button type="submit" class="btn">Entrar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="register">
+                <h3 class="section__title">Criar uma Conta</h3>
+                <form class="form grid" id="registerForm">
+                    <input
+                        type="text"
+                        placeholder="Nome de Usuário"
+                        class="form__input"
+                        id="registerUsername"
+                        required
+                    />
+                    <input
+                        type="email"
+                        placeholder="Seu Email"
+                        class="form__input"
+                        id="registerEmail"
+                        required
+                    />
+                    <input
+                        type="password"
+                        placeholder="Sua Senha"
+                        class="form__input"
+                        id="registerPassword"
+                        required
+                    />
+                    <input
+                        type="password"
+                        placeholder="Confirme a Senha"
+                        class="form__input"
+                        id="registerConfirmPassword"
+                        required
+                    />
+                    <div class="form__btn">
+                        <button type="submit" class="btn">Enviar & Registrar</button>
+                    </div>
+                </form>
+            </div>
         </div>
-      </section>
+    </section>
+    
+    
+      
 
       <!--=============== NEWSLETTER ===============-->
       <section class="newsletter section home__newsletter">
@@ -292,5 +305,6 @@
 
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/registe.js"></script>
   </body>
 </html>
