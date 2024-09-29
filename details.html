@@ -111,6 +111,7 @@
         </ul>
     </section>
 
+    
 
     
     <!--=============== DETAILS ===============-->
@@ -167,334 +168,62 @@
       </div>
   </section>
 
-  <style>
-    .reviews__section {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+  <div id="reviewsList"></div> <!-- Contêiner para exibir as avaliações -->
 
-h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 15px;
-}
 
-.reviews__list {
-    margin-bottom: 20px;
-}
-
-.review__single {
-    background-color: #fff;
-    border-radius: 6px;
-    padding: 15px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.review__title {
-    font-size: 18px;
-    font-weight: bold;
-    color: #007bff;
-}
-
-.review__content {
-    margin-top: 5px;
-    color: #555;
-}
-
-.review__form {
-    background-color: #fff;
-    border-radius: 6px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.review__form input, 
-.review__form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.review__form button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.review__form button:hover {
-    background-color: #0056b3;
-}
-
-  </style>
-
-<div id="reviews-container">
-  <h2>Avaliações</h2>
-  <div id="reviews-list"></div>
-</div>
     
           
       <!--=============== DETAILS TAB ===============-->
       <section class="details__tab container">
-        <div id="review-form">
-          <h2>Deixar uma Avaliação</h2>
-          <form id="submit-review">
-              <input type="text" id="review-name" placeholder="Seu Nome" required>
-              <input type="email" id="review-email" placeholder="Seu Email" required>
-              <textarea id="review-description" placeholder="Sua avaliação" required></textarea>
-              <label for="review-rating">Avaliação:</label>
-              <select id="review-rating">
-                  <option value="1">1 Estrela</option>
-                  <option value="2">2 Estrelas</option>
-                  <option value="3">3 Estrelas</option>
-                  <option value="4">4 Estrelas</option>
-                  <option value="5">5 Estrelas</option>
-              </select>
-              <button type="submit">Enviar Avaliação</button>
-          </form>
-      </div>
+        <div class="detail__tabs">
+            <span class="detail__tab active-tab" data-target="#reviews">Avaliações (<span id="review-count">0</span>)</span>
+        </div>
+        <div class="details__tabs-content">
+            <div class="details__tab-content active-tab" id="reviews">
+                <div class="reviews__container grid" id="reviews-container">
+                    <!-- Avaliações serão inseridas aqui -->
+                </div>
+                <div class="review__form">
+                    <h4 class="review__form-title">Adicionar uma avaliação</h4>
+                    <div class="rate__product">
+                        <i class="fi fi-rs-star"></i>
+                        <i class="fi fi-rs-star"></i>
+                        <i class="fi fi-rs-star"></i>
+                        <i class="fi fi-rs-star"></i>
+                        <i class="fi fi-rs-star"></i>
+                    </div>
+                    <form id="review-form" class="form grid">
+                        <textarea class="form__input textarea" placeholder="Escreva um comentário" required></textarea>
+                        <div class="form__group grid">
+                            <input type="text" placeholder="Nome" class="form__input" required>
+                            <input type="email" placeholder="Email" class="form__input" required>
+                        </div>
+                        <div class="form__btn">
+                            <button type="submit" class="btn">Enviar Avaliação</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
+    
+      
+      
     
     
       
       <!--=============== PRODUCTS ===============-->
       <section class="products container section--lg">
         <h3 class="section__title"><span>Produtos</span> relacionados</h3>
-        <div class="products__container grid">
-          <div class="product__item">
-            <div class="product__banner">
-              <a href="details.html" class="product__images">
-                <img
-                  src="assets/img/product-1-1.jpg"
-                  alt=""
-                  class="product__img default"
-                />
-                <img
-                  src="assets/img/product-1-2.jpg"
-                  alt=""
-                  class="product__img hover"
-                />
-              </a>
-              <div class="product__actions">
-                <a href="#" class="action__btn" aria-label="Quick View">
-                  <i class="fi fi-rs-eye"></i>
-                </a>
-                <a
-                  href="#"
-                  class="action__btn"
-                  aria-label="Add to Wishlist"
-                >
-                  <i class="fi fi-rs-heart"></i>
-                </a>
-                <a href="#" class="action__btn" aria-label="Compare">
-                  <i class="fi fi-rs-shuffle"></i>
-                </a>
-              </div>
-              <div class="product__badge light-pink">Hot</div>
+        <div class="tab__items">
+            <div class="tab__item active-tab" id="brand">
+                <div class="products__container grid">
+                    <!-- Produtos serão inseridos dinamicamente -->
+                </div>
             </div>
-            <div class="product__content">
-              <span class="product__category">Clothing</span>
-              <a href="details.html">
-                <h3 class="product__title">Colorful Pattern Shirts</h3>
-              </a>
-              <div class="product__rating">
-                <i class="fi fi-rs-star"></i>
-                <i class="fi fi-rs-star"></i>
-                <i class="fi fi-rs-star"></i>
-                <i class="fi fi-rs-star"></i>
-                <i class="fi fi-rs-star"></i>
-              </div>
-              <div class="product__price flex">
-                <span class="new__price">$238.85</span>
-                <span class="old__price">$245.8</span>
-              </div>
-              <a
-                href="#"
-                class="action__btn cart__btn"
-                aria-label="Add To Cart"
-              >
-                <i class="fi fi-rs-shopping-bag-add"></i>
-              </a>
-            </div>
-          </div>
-          <div class="product__item">
-            <div class="product__banner">
-              <a href="details.html" class="product__images">
-                <img
-                  src="assets/img/product-2-1.jpg"
-                  alt=""
-                  class="product__img default"
-                />
-                <img
-                  src="assets/img/product-2-2.jpg"
-                  alt=""
-                  class="product__img hover"
-                />
-              </a>
-              <div class="product__actions">
-                <a href="#" class="action__btn" aria-label="Quick View">
-                  <i class="fi fi-rs-eye"></i>
-                </a>
-                <a
-                  href="#"
-                  class="action__btn"
-                  aria-label="Add to Wishlist"
-                >
-                  <i class="fi fi-rs-heart"></i>
-                </a>
-                <a href="#" class="action__btn" aria-label="Compare">
-                  <i class="fi fi-rs-shuffle"></i>
-                </a>
-              </div>
-              <div class="product__badge light-green">Hot</div>
-            </div>
-            <div class="product__content">
-              <span class="product__category">Clothing</span>
-              <a href="details.html">
-                <h3 class="product__title">Colorful Pattern Shirts</h3>
-              </a>
-              <div class="product__rating">
-                <i class="fi fi-rs-star"></i>
-                <i class="fi fi-rs-star"></i>
-                <i class="fi fi-rs-star"></i>
-                <i class="fi fi-rs-star"></i>
-                <i class="fi fi-rs-star"></i>
-              </div>
-              <div class="product__price flex">
-                <span class="new__price">$238.85</span>
-                <span class="old__price">$245.8</span>
-              </div>
-              <a
-                href="#"
-                class="action__btn cart__btn"
-                aria-label="Add To Cart"
-              >
-                <i class="fi fi-rs-shopping-bag-add"></i>
-              </a>
-            </div>
-          </div>
-          <div class="product__item">
-            <div class="product__banner">
-              <a href="details.html" class="product__images">
-                <img
-                  src="assets/img/product-3-1.jpg"
-                  alt=""
-                  class="product__img default"
-                />
-                <img
-                  src="assets/img/product-3-2.jpg"
-                  alt=""
-                  class="product__img hover"
-                />
-              </a>
-              <div class="product__actions">
-                <a href="#" class="action__btn" aria-label="Quick View">
-                  <i class="fi fi-rs-eye"></i>
-                </a>
-                <a
-                  href="#"
-                  class="action__btn"
-                  aria-label="Add to Wishlist"
-                >
-                  <i class="fi fi-rs-heart"></i>
-                </a>
-                <a href="#" class="action__btn" aria-label="Compare">
-                  <i class="fi fi-rs-shuffle"></i>
-                </a>
-              </div>
-              <div class="product__badge light-orange">Hot</div>
-            </div>
-            <div class="product__content">
-              <span class="product__category">Clothing</span>
-              <a href="details.html">
-                <h3 class="product__title">Colorful Pattern Shirts</h3>
-              </a>
-              <div class="product__rating">
-                <i class="fi fi-rs-star"></i>
-                <i class="fi fi-rs-star"></i>
-                <i class="fi fi-rs-star"></i>
-                <i class="fi fi-rs-star"></i>
-                <i class="fi fi-rs-star"></i>
-              </div>
-              <div class="product__price flex">
-                <span class="new__price">$238.85</span>
-                <span class="old__price">$245.8</span>
-              </div>
-              <a
-                href="#"
-                class="action__btn cart__btn"
-                aria-label="Add To Cart"
-              >
-                <i class="fi fi-rs-shopping-bag-add"></i>
-              </a>
-            </div>
-          </div>
-          <div class="product__item">
-            <div class="product__banner">
-              <a href="details.html" class="product__images">
-                <img
-                  src="assets/img/product-4-1.jpg"
-                  alt=""
-                  class="product__img default"
-                />
-                <img
-                  src="assets/img/product-4-2.jpg"
-                  alt=""
-                  class="product__img hover"
-                />
-              </a>
-              <div class="product__actions">
-                <a href="#" class="action__btn" aria-label="Quick View">
-                  <i class="fi fi-rs-eye"></i>
-                </a>
-                <a
-                  href="#"
-                  class="action__btn"
-                  aria-label="Add to Wishlist"
-                >
-                  <i class="fi fi-rs-heart"></i>
-                </a>
-                <a href="#" class="action__btn" aria-label="Compare">
-                  <i class="fi fi-rs-shuffle"></i>
-                </a>
-              </div>
-              <div class="product__badge light-blue">Hot</div>
-            </div>
-            <div class="product__content">
-              <span class="product__category">Clothing</span>
-              <a href="details.html">
-                <h3 class="product__title">Colorful Pattern Shirts</h3>
-              </a>
-              <div class="product__rating">
-                <i class="fi fi-rs-star"></i>
-                <i class="fi fi-rs-star"></i>
-                <i class="fi fi-rs-star"></i>
-                <i class="fi fi-rs-star"></i>
-                <i class="fi fi-rs-star"></i>
-              </div>
-              <div class="product__price flex">
-                <span class="new__price">$238.85</span>
-                <span class="old__price">$245.8</span>
-              </div>
-              <a
-                href="#"
-                class="action__btn cart__btn"
-                aria-label="Add To Cart"
-              >
-                <i class="fi fi-rs-shopping-bag-add"></i>
-              </a>
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
+    
 
       <!--=============== NEWSLETTER ===============-->
       <section class="newsletter section home__newsletter">
@@ -626,5 +355,6 @@ h2 {
 
     <script src="assets/js/view.js"
     <script src="assets/js/mini.js"></script>
+    <script src="assets/js/routes.js"></script>
   </body>
 </html>

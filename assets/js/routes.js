@@ -1,17 +1,19 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () { 
     const tabs = document.querySelectorAll(".tab__btn");
     const containers = document.querySelectorAll(".products__container");
 
-    function loadProducts(category, target) {
+    function loadProducts(category, target, marca) {
         let apiUrl;
 
-        // Definindo a URL da API com base na categoria
+        // Definindo a URL da API com base na categoria ou marca
         if (category === "Destaque") {
             apiUrl = "http://localhost:3000/products/featured";
         } else if (category === "Popular") {
             apiUrl = "http://localhost:3000/products/popular";
         } else if (category === "Recentes") {
             apiUrl = "http://localhost:3000/products/new";
+        } else if (marca) {  // Se uma marca foi passada, use essa lógica
+            apiUrl = `http://localhost:3000/products/brand/${marca}`; // URL da API para produtos por marca
         }
 
         fetch(apiUrl)
@@ -36,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 limitedData.forEach(product => {
                     container.innerHTML += `
-                        <div class="product__item swiper-slide" data-id="${product._id}"> <!-- Armazenando o ID aqui -->
+                        <div class="product__item swiper-slide" data-id="${product.productId}">
                             <div class="product__banner">
                                 <div class="product__images">
                                     <img src="${product.image_url}" alt="${product.title}" class="product__img default" />
@@ -59,17 +61,16 @@ document.addEventListener("DOMContentLoaded", function () {
                                     <span class="new__price">${product.price} MZN</span>
                                     <span class="old__price">${product.price_org} MZN</span>
                                 </div>
-                                <div class="short__description" style="display: none;">${product.description}</div> <!-- Descrição escondida -->
-                                <div class="short__marca" style="display: none;">${product.marca}</div> <!-- Esconde a Marca -->
-                                <div class="catalog" style="display: none;">${product.catalog}</div> <!-- Esconde a catalogo -->
+                                <div class="short__description" style="display: none;">${product.description}</div>
+                                <div class="short__marca" style="display: none;">${product.marca}</div>
+                                <div class="catalog" style="display: none;">${product.catalog}</div>
                                 <div class="hidden-image-urls" style="display: none;">
                                     <span class="image3_url">${product.image3_url}</span>
                                     <span class="image4_url">${product.image4_url}</span>
                                 </div>
-                                <!-- Armazenando estoque e cores sem exibir -->
                                 <div style="display: none;">
-                                    <span class="stock">${product.stock}</span> <!-- Estoque -->
-                                    <span class="colors">${product.colors.join(', ')}</span> <!-- Cores, se múltiplas -->
+                                    <span class="stock">${product.stock}</span>
+                                    <span class="colors">${product.colors.join(', ')}</span>
                                 </div>
                             </div>
                         </div>
@@ -78,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 console.log(`Produtos carregados para ${target}:`, limitedData);
 
-                // Inicializar o Swiper e adicionar o evento de clique
                 updateSwiper(target);
                 addProductClickEvent();
             })
@@ -114,9 +114,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     colors: this.querySelector('.colors').innerText.split(', ')
                 };
 
-                // Salvar dados do produto no localStorage
                 localStorage.setItem('selectedProduct', JSON.stringify(productData));
                 console.log('Produto salvo:', productData);
+
+                // Carregar produtos da mesma marca
+                loadProducts(null, "#brand", productData.marca);
 
                 // Redirecionar para a página de detalhes
                 window.location.href = 'details.html';
@@ -158,32 +160,6 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log('Swiper inicializado corretamente para:', target);
         } catch (error) {
             console.error('Erro ao inicializar o Swiper:', error);
-        }
-    }
-    
-    // Função para carregar e exibir as avaliações do produto
-    async function loadReviews(productId) {
-        try {
-            const response = await fetch(`http://localhost:3000/reviews/${productId}`);
-            if (response.ok) {
-                const reviews = await response.json();
-                const reviewsList = document.getElementById('reviewsList');
-                reviewsList.innerHTML = '';
-
-                reviews.forEach(review => {
-                    reviewsList.innerHTML += `
-                        <div class="review__single">
-                            <h4>${review.name}</h4>
-                            <small>Avaliação: ${review.rating}/5</small>
-                            <p>${review.description}</p>
-                        </div>
-                    `;
-                });
-            } else {
-                console.error('Erro ao carregar avaliações.');
-            }
-        } catch (error) {
-            console.error('Erro ao carregar avaliações:', error);
         }
     }
 
